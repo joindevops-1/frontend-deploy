@@ -2,8 +2,8 @@ data "aws_ssm_parameter" "vpc_id" {
   name = "/${var.project_name}/${var.environment}/vpc_id"
 }
 
-data "aws_ssm_parameter" "web_sg_id" {
-  name = "/${var.project_name}/${var.environment}/web_sg_id"
+data "aws_ssm_parameter" "frontend_sg_id" {
+  name = "/${var.project_name}/${var.environment}/frontend_sg_id"
 }
 
 data "aws_ssm_parameter" "private_subnet_ids" {
