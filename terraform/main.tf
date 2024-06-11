@@ -19,7 +19,7 @@ module "web" {
   ami = data.aws_ami.ami_info.id
   name                   = "${var.project_name}-${var.environment}-web-ami"
   instance_type          = "t3.micro"
-  vpc_security_group_ids = [data.aws_ssm_parameter.web_sg_id.value]
+  vpc_security_group_ids = [data.aws_ssm_parameter.frontend_sg_id.value]
   subnet_id              = element(split(",", data.aws_ssm_parameter.private_subnet_ids.value), 0)
   #iam_instance_profile = "ShellScriptRoleForRoboshop"
   tags = merge(
